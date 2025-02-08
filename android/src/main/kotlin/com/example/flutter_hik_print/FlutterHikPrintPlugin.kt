@@ -52,7 +52,7 @@ class FlutterHikPrintPlugin: FlutterPlugin, MethodCallHandler {
 
   private fun printText(text: String) {
     // 打开端口
-    val portHandle = hikPrint?.CP_Port_OpenCom("COM1", 9600, 8, 0, 0, 0, 0)
+    val portHandle = hikPrint?.CP_Port_OpenCom("BCKJ_DEV", 115200, 8, 0, 0, 0, 1)
 
     if (hikPrint != null) {
       Log.i("HikPrint", "${hikPrint?.toString()}")
