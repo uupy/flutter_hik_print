@@ -33,8 +33,8 @@ class FlutterHikPrintPlugin: FlutterPlugin, MethodCallHandler {
     when (call.method) {
       "printText" -> {
         val text = call.argument<String>("text")
-        Log.i("PrintText", text)
         if (text != null) {
+          Log.i("PrintText", text)
           printText(text)
           result.success("Printing started")
         } else {
@@ -53,9 +53,10 @@ class FlutterHikPrintPlugin: FlutterPlugin, MethodCallHandler {
   private fun printText(text: String) {
     // 打开端口
     val portHandle = hikPrint?.CP_Port_OpenCom("COM1", 9600, 8, 0, 0, 0, 0)
-    Log.i("HikPrint", hikPrint)
-    Log.i("PortHandle", portHandle)
+    Log.i("HikPrint", hikPrint?.toString())
+
     if (portHandle != null) {
+      Log.i("PortHandle", "${portHandle?.name}")
       // 打印文本
       hikPrint?.CP_Pos_PrintText(portHandle, text)
       // 关闭端口
