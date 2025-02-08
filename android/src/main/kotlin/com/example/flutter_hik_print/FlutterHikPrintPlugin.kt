@@ -25,7 +25,7 @@ class FlutterHikPrintPlugin: FlutterPlugin, MethodCallHandler {
     context = flutterPluginBinding.applicationContext
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_hik_print")
     channel.setMethodCallHandler(this)
-    hikPrint = HikPrint()
+    hikPrint = HikPrint.getInstance()
   }
 
   override fun onMethodCall(call: MethodCall, result: Result) {
