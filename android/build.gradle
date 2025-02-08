@@ -86,6 +86,6 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.9.0'
 
     // 海康威视打印 SDK
-    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+//    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     implementation(name: 'hikprint-release', ext: 'aar') // 加载 hikprint-release.aar
 }
